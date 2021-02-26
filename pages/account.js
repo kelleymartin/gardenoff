@@ -75,48 +75,50 @@ export default function Home() {
           </div>
         </div>
         <div className="container inputSection">
-          <div>
-            <label>Day #</label>
-            <input className="dayNumberInput" type="number" required></input>*
-          </div>
-          <div>
-            <label>Date:</label>
-            <input
-              type="date"
-              min="2021-03-01"
-              max="2021-03-31"
-              required
-            ></input>
-            *
-          </div>
-          <div>
-            <label>Set up:</label>
-            <input className="imageUpload" type="file"></input>
-            or
-            <input
-              className="textField"
-              type="text"
-              placeholder="Write about your setup"
-            ></input>
-          </div>
-          <div>
-            <label>Waterers:</label>
-            <input className="imageUpload" type="file"></input>
-            or
-            <input type="search" placeholder="Add waterer"></input>
-          </div>
-          <div>
-            <label>Results:</label>
-            <input className="imageUpload" type="file"></input>
-            or
-            <input type="checkbox"></input>Orange cosmo
-            <input type="checkbox"></input>Pink cosmo
-            <input type="checkbox"></input>Black cosmo
-            <input type="checkbox"></input>Orange lily
-            <input type="checkbox"></input>Pink lily
-            <input type="checkbox"></input>Black lily
-          </div>
-          <input className="submit" type="submit"></input>
+          <form>
+            <div>
+              <label>Day #</label>
+              <input className="dayNumberInput" type="number" required></input>*
+            </div>
+            <div>
+              <label>Date:</label>
+              <input
+                type="date"
+                min="2021-03-01"
+                max="2021-03-31"
+                required
+              ></input>
+              *
+            </div>
+            <div>
+              <label>Set up:</label>
+              <input className="imageUpload" type="file"></input>
+              or
+              <input
+                className="textField"
+                type="text"
+                placeholder="Write about your setup"
+              ></input>
+            </div>
+            <div>
+              <label>Waterers:</label>
+              <input className="imageUpload" type="file"></input>
+              or
+              <input type="search" placeholder="Add waterer"></input>
+            </div>
+            <div>
+              <label>Results:</label>
+              <input className="imageUpload" type="file"></input>
+              or
+              <input type="checkbox"></input>Orange cosmo
+              <input type="checkbox"></input>Pink cosmo
+              <input type="checkbox"></input>Black cosmo
+              <input type="checkbox"></input>Orange lily
+              <input type="checkbox"></input>Pink lily
+              <input type="checkbox"></input>Black lily
+            </div>
+            <input className="submit" type="submit"></input>
+          </form>
         </div>
       </main>
     </div>
