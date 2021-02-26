@@ -6,7 +6,7 @@ body {
   background-size: 64px;
   box-sizing: border-box;
   text-align: center;
-  font-family: verdana;}
+  font-family: "Arial Rounded MT Bold", Arial, Helvetica, sans-serif;}
 a {
   color: inherit;
   text-decoration: none;
@@ -94,7 +94,7 @@ h3 {
 
 .calendar {
   display: flex;
-  border: 12px solid #305729;
+  border: 12px ridge #61AE51;
   border-radius: 12px;
   background-color: #D7EBD3;
 }
@@ -102,8 +102,39 @@ h3 {
 .day {
   display: flex;
   flex-direction: column;
-  border: 1px solid #305729;
-  padding: 12px 24px;
+  border: double #305729;
+  /* padding: 12px 24px; */
+}
+
+.date {
+  border-top: 1px dashed #305729;
+  border-bottom: 1px dashed #305729;
+  padding: 6px 0;
+  margin: 12px 0 0;
+}
+
+.achieved {
+  /* display: flex; */
+  border-top: 1px dashed #305729;
+  padding: 6px;
+}
+
+.achieved > img {
+  height: 30px;
+  width: 30px;
+  margin-top: 6px;
+  opacity: 30%;
+}
+
+.achieved > img:nth-child(odd) {
+  opacity: 1;
+  background-color: white;
+  border-radius: 15px;
+  border: solid 1px #61AE51;
+}
+
+.achieved > img:last-child {
+  box-shadow: 0 0 6px pink;
 }
 
 .numberDay {
