@@ -1,11 +1,12 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
+  background-color: #b0d7a8;
+  background-image: url("https://cdn.discordapp.com/attachments/756023874054783050/812177237599322152/Spring25.png");
+  background-repeat: repeat;
+  background-size: 64px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: verdana;}
 a {
   color: inherit;
   text-decoration: none;
@@ -13,4 +14,146 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h3 {
+  margin: 0 0 12px;
+}
+
+.container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.plot {
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(5, 60px);
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  background-color: #61ae51;
+  opacity: 75%;
+/*   border: 1px solid #61AE51; */
+  border-radius: 6px;
+}
+
+.square:hover {
+  opacity: 1;
+  border: 1px solid black;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.polaroid {
+  border-radius: 12px;
+  border: 12px solid white;
+  background-color: white;
+/*   padding-bottom: 96px; */
+}
+
+.group {
+  max-width: 480px;
+/*   border-radius: 12px; */
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tag {
+  display: flex;
+  width: auto;
+  align-items: center;
+  font-family: 'Indie Flower', cursive;
+  font-size: 36px;
+  font-weight: 600;
+  margin: 12px 6px;
+/*   transform: rotate(-10deg); */
+}
+
+.eye {
+  margin-right: 3px;
+}
+
+.download {
+  margin-top: 12px;
+  justify-self: right;
+  height: 36px;
+}
+
+.calendar {
+  display: flex;
+  border: 12px solid #305729;
+  border-radius: 12px;
+  background-color: #D7EBD3;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #305729;
+  padding: 12px 24px;
+}
+
+.numberDay {
+  font-size: 48px;
+  margin: 0;
+}
+
+ul {
+  list-style: url("https://cdn.discordapp.com/attachments/756023874054783050/813569889733443604/ListCosmo.png");
+  text-align: left;
+}
+
+.newDay {
+  font-size: 24px;
+  align-self: center;
+  justify-self: center;
+  margin: 50% 12px;
+}
+
+.inputSection {
+  width: 50vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+label {
+  font-size: 30px;
+  margin-right: 12px;
+}
+
+input {
+  font-size: 30px;
+  border-radius: 12px;
+}
+
+.dayNumberInput {
+  width: 60px;
+}
+
+.imageUpload {
+  width: 400px;
+}
+
+.textField {
+  width: 400px;
+  height: 120px;
+}
+
+.submit {
+  align-self: flex-end;
 }
