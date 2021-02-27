@@ -10,6 +10,16 @@ export default function Home() {
 
       <main>
         <h1>ACNH The Oasis Breeding Contest</h1>
+        <div className="roundHeader">
+          <img src="/Cosmos4.png"></img>
+          <img src="/Cosmos3.png"></img>
+          <img src="/Cosmos5.png"></img>
+          <h2>Round #1</h2>
+          <img src="/Yuri3.png"></img>
+          <img src="/Yuri4.png"></img>
+          <img src="/Yuri5.png"></img>
+        </div>
+        <h3>Cosmos & Lilies</h3>
         <div className="container">
           <div className="calendar">
             <div className="day">
@@ -76,48 +86,72 @@ export default function Home() {
         </div>
         <div className="container inputSection">
           <form>
-            <div>
-              <label>Day #</label>
-              <input className="dayNumberInput" type="number" required></input>*
+            <div className="dayAndDate">
+              <div className="formSection">
+                <label>Day #</label>
+                <input
+                  className="dayNumberInput"
+                  type="number"
+                  required
+                ></input>
+              </div>
+              <div className="formSection">
+                <label>Date:</label>
+                <input className="dateInput"
+                  type="date"
+                  min="2021-03-01"
+                  max="2021-03-31"
+                  required
+                ></input>
+              </div>
             </div>
-            <div>
-              <label>Date:</label>
-              <input
-                type="date"
-                min="2021-03-01"
-                max="2021-03-31"
-                required
-              ></input>
-              *
-            </div>
-            <div>
+            <div className="formSection">
               <label>Set up:</label>
               <input className="imageUpload" type="file"></input>
               or
-              <input
-                className="textField"
-                type="text"
-                placeholder="Write about your setup"
-              ></input>
+              <textarea className="textField"></textarea>
             </div>
-            <div>
+            <div className="formSection">
               <label>Waterers:</label>
               <input className="imageUpload" type="file"></input>
               or
-              <input type="search" placeholder="Add waterer"></input>
+              <select></select>
             </div>
-            <div>
+            <div className="formSection">
               <label>Results:</label>
               <input className="imageUpload" type="file"></input>
               or
-              <input type="checkbox"></input>Orange cosmo
-              <input type="checkbox"></input>Pink cosmo
-              <input type="checkbox"></input>Black cosmo
-              <input type="checkbox"></input>Orange lily
-              <input type="checkbox"></input>Pink lily
-              <input type="checkbox"></input>Black lily
+              <div className="resultSelection">
+              <div className="flowerBox">
+                <input type="checkbox"></input>
+                <img src="/Cosmos4.png"></img>
+                <p>Orange cosmo</p>
+              </div><div className="flowerBox">
+                <input type="checkbox"></input>
+                <img src="/Cosmos3.png"></img>
+                <p>Pink cosmo</p>
+              </div><div className="flowerBox">
+                <input type="checkbox"></input>
+                <img src="/Cosmos5.png"></img>
+                <p>Black cosmo</p>
+              </div><div className="flowerBox">
+                <input type="checkbox"></input>
+                <img src="/Yuri3.png"></img>
+                <p>Orange lily</p>
+              </div><div className="flowerBox">
+                <input type="checkbox"></input>
+                <img src="/Yuri4.png"></img>
+                <p>Pink lily</p>
+              </div><div className="flowerBox">
+                <input type="checkbox"></input>
+                <img src="/Yuri5.png"></img>
+                <p>Black lily</p>
+              </div>
+              </div>
             </div>
-            <input className="submit" type="submit"></input>
+            <button className="submit" type="submit">
+              Save new day
+            </button>
           </form>
         </div>
       </main>
