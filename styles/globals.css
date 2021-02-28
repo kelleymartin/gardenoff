@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   text-align: center;
   font-family: "Arial Rounded MT Bold", Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 a {
   color: inherit;
@@ -20,6 +21,49 @@ a {
 
 h3 {
   margin: 0 0 12px;
+}
+
+.navbar {
+  height: 60px;
+  margin: 0;
+  width: 100%;
+}
+
+.topbar {
+  background-color: #71CC55;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.icon {
+  height: 100%;
+  justify-self: flex-start;
+}
+
+.serverName {
+  justify-self: flex-start;
+}
+
+.contestName {
+  justify-self: center;
+}
+
+.accountName {
+  justify-self: flex-end;
+
+}
+
+.bottombar {
+  background-color: #54BA45;
+  height: 6px;
+}
+
+.droops {
+  height: 30px;
+  width: 100%;
+  background-image: url("/droops.svg");
 }
 
 .container {

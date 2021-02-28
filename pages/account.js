@@ -9,7 +9,16 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>ACNH The Oasis Breeding Contest</h1>
+        <div className="navbar">
+          <div className="topbar">
+            <img className="icon" src="/icon.gif"></img>
+            <h1 className="serverName">ACNH The Oasis</h1>
+            <h1 className="contestName">Breeding Contest</h1>
+            <h1 className="accountName">Account</h1>
+          </div>
+          <div className="bottombar"></div>
+          <div className="droops"></div>
+        </div>
         <div className="roundHeader">
           <img src="/Cosmos4.png"></img>
           <img src="/Cosmos3.png"></img>
@@ -84,20 +93,24 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <div className="container inputSection">
           <form>
             <div className="dayAndDate">
               <div className="formSection">
-                <label>Day #</label>
+                <label htmlFor="dayNumber">Day #</label>
                 <input
+                  id="dayNumber"
                   className="dayNumberInput"
                   type="number"
                   required
                 ></input>
               </div>
               <div className="formSection">
-                <label>Date:</label>
-                <input className="dateInput"
+                <label htmlFor="date">Date:</label>
+                <input
+                  id="date"
+                  className="dateInput"
                   type="date"
                   min="2021-03-01"
                   max="2021-03-31"
@@ -106,47 +119,60 @@ export default function Home() {
               </div>
             </div>
             <div className="formSection">
-              <label>Set up:</label>
-              <input className="imageUpload" type="file"></input>
+              <label htmlFor="setUpPic">Set up:</label>
+              <input id="setUpPic" className="imageUpload" type="file"></input>
               or
               <textarea className="textField"></textarea>
             </div>
             <div className="formSection">
-              <label>Waterers:</label>
-              <input className="imageUpload" type="file"></input>
+              <label htmlFor="waterers">Waterers:</label>
+              <input
+                id="waterersPic"
+                className="imageUpload"
+                type="file"
+              ></input>
               or
-              <select></select>
+              <select id="wateresSelect"></select>
             </div>
             <div className="formSection">
-              <label>Results:</label>
-              <input className="imageUpload" type="file"></input>
+              <label htmlFor="results">Results:</label>
+              <input
+                id="resultsPic"
+                className="imageUpload"
+                type="file"
+              ></input>
               or
               <div className="resultSelection">
-              <div className="flowerBox">
-                <input type="checkbox"></input>
-                <img src="/Cosmos4.png"></img>
-                <p>Orange cosmo</p>
-              </div><div className="flowerBox">
-                <input type="checkbox"></input>
-                <img src="/Cosmos3.png"></img>
-                <p>Pink cosmo</p>
-              </div><div className="flowerBox">
-                <input type="checkbox"></input>
-                <img src="/Cosmos5.png"></img>
-                <p>Black cosmo</p>
-              </div><div className="flowerBox">
-                <input type="checkbox"></input>
-                <img src="/Yuri3.png"></img>
-                <p>Orange lily</p>
-              </div><div className="flowerBox">
-                <input type="checkbox"></input>
-                <img src="/Yuri4.png"></img>
-                <p>Pink lily</p>
-              </div><div className="flowerBox">
-                <input type="checkbox"></input>
-                <img src="/Yuri5.png"></img>
-                <p>Black lily</p>
-              </div>
+                <div className="flowerBox">
+                  <input id="orangeCosmo" type="checkbox"></input>
+                  <img src="/Cosmos4.png"></img>
+                  <p>Orange cosmo</p>
+                </div>
+                <div className="flowerBox">
+                  <input id="pinkCosmo" type="checkbox"></input>
+                  <img src="/Cosmos3.png"></img>
+                  <p>Pink cosmo</p>
+                </div>
+                <div className="flowerBox">
+                  <input id="blackCosmo" type="checkbox"></input>
+                  <img src="/Cosmos5.png"></img>
+                  <p>Black cosmo</p>
+                </div>
+                <div className="flowerBox">
+                  <input id="orangeLily" type="checkbox"></input>
+                  <img src="/Yuri3.png"></img>
+                  <p>Orange lily</p>
+                </div>
+                <div className="flowerBox">
+                  <input id="pinkLily" type="checkbox"></input>
+                  <img src="/Yuri4.png"></img>
+                  <p>Pink lily</p>
+                </div>
+                <div className="flowerBox">
+                  <input id="blackLily" type="checkbox"></input>
+                  <img src="/Yuri5.png"></img>
+                  <p>Black lily</p>
+                </div>
               </div>
             </div>
             <button className="submit" type="submit">
