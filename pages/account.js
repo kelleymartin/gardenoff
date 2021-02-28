@@ -1,4 +1,106 @@
 import Head from "next/head";
+import { base } from "../lib/airtable";
+
+function Form() {
+  const addDay = (e) => {
+    e.preventDefault();
+    base("Table 1").create(
+      {
+        Name: "robin",
+        dayNumber: Number(e.target.dayNumber.value),
+        date: e.target.date.value,
+      },
+      function (err, record) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log(record.getId());
+      }
+    );
+  };
+
+  return (
+    <form onSubmit={addDay}>
+      <div className="dayAndDate">
+        <div className="formSection">
+          <label htmlFor="dayNumber">Day #</label>
+          <input
+            id="dayNumber"
+            name="dayNumber"
+            className="dayNumberInput"
+            type="number"
+            required
+          ></input>
+        </div>
+        <div className="formSection">
+          <label htmlFor="date">Date:</label>
+          <input
+            id="date"
+            name="date"
+            className="dateInput"
+            type="date"
+            min="2021-03-01"
+            max="2021-03-31"
+            required
+          ></input>
+        </div>
+      </div>
+      <div className="formSection">
+        <label htmlFor="setUpPic">Set up:</label>
+        <input id="setUpPic" className="imageUpload" type="file"></input>
+        or
+        <textarea className="textField"></textarea>
+      </div>
+      <div className="formSection">
+        <label htmlFor="waterers">Waterers:</label>
+        <input id="waterersPic" className="imageUpload" type="file"></input>
+        or
+        <select id="wateresSelect"></select>
+      </div>
+      <div className="formSection">
+        <label htmlFor="results">Results:</label>
+        <input id="resultsPic" className="imageUpload" type="file"></input>
+        or
+        <div className="resultSelection">
+          <div className="flowerBox">
+            <input id="orangeCosmo" type="checkbox"></input>
+            <img src="/Cosmos4.png"></img>
+            <p>Orange cosmo</p>
+          </div>
+          <div className="flowerBox">
+            <input id="pinkCosmo" type="checkbox"></input>
+            <img src="/Cosmos3.png"></img>
+            <p>Pink cosmo</p>
+          </div>
+          <div className="flowerBox">
+            <input id="blackCosmo" type="checkbox"></input>
+            <img src="/Cosmos5.png"></img>
+            <p>Black cosmo</p>
+          </div>
+          <div className="flowerBox">
+            <input id="orangeLily" type="checkbox"></input>
+            <img src="/Yuri3.png"></img>
+            <p>Orange lily</p>
+          </div>
+          <div className="flowerBox">
+            <input id="pinkLily" type="checkbox"></input>
+            <img src="/Yuri4.png"></img>
+            <p>Pink lily</p>
+          </div>
+          <div className="flowerBox">
+            <input id="blackLily" type="checkbox"></input>
+            <img src="/Yuri5.png"></img>
+            <p>Black lily</p>
+          </div>
+        </div>
+      </div>
+      <button className="submit" type="submit">
+        Save new day
+      </button>
+    </form>
+  );
+}
 
 export default function Home() {
   return (
@@ -95,90 +197,7 @@ export default function Home() {
         </div>
 
         <div className="container inputSection">
-          <form>
-            <div className="dayAndDate">
-              <div className="formSection">
-                <label htmlFor="dayNumber">Day #</label>
-                <input
-                  id="dayNumber"
-                  className="dayNumberInput"
-                  type="number"
-                  required
-                ></input>
-              </div>
-              <div className="formSection">
-                <label htmlFor="date">Date:</label>
-                <input
-                  id="date"
-                  className="dateInput"
-                  type="date"
-                  min="2021-03-01"
-                  max="2021-03-31"
-                  required
-                ></input>
-              </div>
-            </div>
-            <div className="formSection">
-              <label htmlFor="setUpPic">Set up:</label>
-              <input id="setUpPic" className="imageUpload" type="file"></input>
-              or
-              <textarea className="textField"></textarea>
-            </div>
-            <div className="formSection">
-              <label htmlFor="waterers">Waterers:</label>
-              <input
-                id="waterersPic"
-                className="imageUpload"
-                type="file"
-              ></input>
-              or
-              <select id="wateresSelect"></select>
-            </div>
-            <div className="formSection">
-              <label htmlFor="results">Results:</label>
-              <input
-                id="resultsPic"
-                className="imageUpload"
-                type="file"
-              ></input>
-              or
-              <div className="resultSelection">
-                <div className="flowerBox">
-                  <input id="orangeCosmo" type="checkbox"></input>
-                  <img src="/Cosmos4.png"></img>
-                  <p>Orange cosmo</p>
-                </div>
-                <div className="flowerBox">
-                  <input id="pinkCosmo" type="checkbox"></input>
-                  <img src="/Cosmos3.png"></img>
-                  <p>Pink cosmo</p>
-                </div>
-                <div className="flowerBox">
-                  <input id="blackCosmo" type="checkbox"></input>
-                  <img src="/Cosmos5.png"></img>
-                  <p>Black cosmo</p>
-                </div>
-                <div className="flowerBox">
-                  <input id="orangeLily" type="checkbox"></input>
-                  <img src="/Yuri3.png"></img>
-                  <p>Orange lily</p>
-                </div>
-                <div className="flowerBox">
-                  <input id="pinkLily" type="checkbox"></input>
-                  <img src="/Yuri4.png"></img>
-                  <p>Pink lily</p>
-                </div>
-                <div className="flowerBox">
-                  <input id="blackLily" type="checkbox"></input>
-                  <img src="/Yuri5.png"></img>
-                  <p>Black lily</p>
-                </div>
-              </div>
-            </div>
-            <button className="submit" type="submit">
-              Save new day
-            </button>
-          </form>
+          <Form />
         </div>
       </main>
     </div>
