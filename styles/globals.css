@@ -167,11 +167,12 @@ h3 {
 .day {
   display: flex;
   flex-direction: column;
-  background-color: #ffcc91;
-  background-image: url("/Tier50.svg");
   border: double #305729;
+  background-color: #D7EBD3;
+  /* background-color: #ffcc91;
+  background-image: url("/Tier50.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   /* padding: 12px 24px; */
 }
 

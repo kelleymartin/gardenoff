@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { base } from "../lib/airtable";
+import { useState } from "react";
 
 function Form() {
   const addDay = (e) => {
@@ -127,6 +128,10 @@ function Form() {
 }
 
 export default function Home() {
+  const [showMe, setShowMe] = useState(false);
+  function toggle() {
+    setShowMe(!showMe);
+  }
   return (
     <div>
       <Head>
@@ -217,24 +222,31 @@ export default function Home() {
           </div>
         </div>
 
-        <button className="newDay">Add a day!</button>
+        <button className="newDay" onClick={toggle}>
+          Add a day!
+        </button>
 
-        <div className="container inputSection">
-          {/* <Form /> */}
+        {showMe && (
+          <>
+          <div className="container inputSection">
+            {/* <Form /> */}
 
-          <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
-          <iframe
-            className="airtable-embed airtable-dynamic-height"
-            src="https://airtable.com/embed/shrhDufTMLfuKt5lv?backgroundColor=green&amp;prefill_setUpText=Pink%20cosmo"
-            // frameborder="0"
-            // onmousewheel=""
-            // width="100%"
-            height="1378"
-            // style="background: transparent; border: 1px solid #ccc;"
-          ></iframe>
+            <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
+            <iframe
+              className="airtable-embed airtable-dynamic-height"
+              src="https://airtable.com/embed/shrhDufTMLfuKt5lv?backgroundColor=green&amp;prefill_setUpText=Pink%20cosmo"
+              // frameborder="0"
+              // onmousewheel=""
+              // width="100%"
+              height="600"
+              // style="background: transparent; border: 1px solid #ccc;"
+            ></iframe>
+          </div>
+          <button className="newDay" onClick={toggle}>Hide the form</button>
+          </>
+        )}
 
-          <button></button>
-        </div>
+        
 
         {/* <div class="island-animation">
           <svg
